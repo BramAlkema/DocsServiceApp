@@ -40,6 +40,15 @@ function openByWordFileBlob(blob) {
 }
 
 /**
+ * @param {Object} blob Blob of Powerpoint file (PPTX file).
+ * @return {DocsServiceApp}
+ */
+function openByPowerPointFileBlob(blob) {
+    return new PowerpointApp(blob);
+}
+
+
+/**
  * @param {object} object Object including parameter for createing new Google Spreadsheet.
  * @return {string} Presentation ID of cerated Google Slides.
  */

@@ -11,7 +11,7 @@
           throw new Error("Please set the blob of data of DOCX format.");
         }
         this.obj = {
-          excel: blob_
+          word: blob_
         };
         this.contentTypes = "[Content_Types].xml";
         this.document = "word/document.xml";
@@ -66,7 +66,7 @@
 
     disassembleWord = function() {
       var blobs;
-      blobs = Utilities.unzip(this.obj.excel.setContentType(MimeType.ZIP));
+      blobs = Utilities.unzip(this.obj.word.setContentType(MimeType.ZIP));
       this.mainObj.fileObj = blobs.reduce((o, b) => {
         return Object.assign(o, {
           [b.getName()]: b
